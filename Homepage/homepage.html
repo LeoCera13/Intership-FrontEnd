@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-top">
+            <span>STITCH REWARDS</span>
+            <span>QUICK ORDER</span>
+            <span>STORE LOCATOR</span>
+        </div>
+        <div class="header-main">
+            <div class="logo">hab+dash</div>
+            <nav class="nav">
+                <a href="#">Top Thread</a>
+                <a href="#">Bobbins</a>
+                <a href="#">Stabilizer</a>
+                <a href="#">Displays</a>
+                <a href="#">Notions</a>
+            </nav>
+            <div class="header-right">
+                <a href="#">CART</a>
+                <a href="#">SIGN UP</a>
+                <a href="#">LOG IN</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Add color to your masterpiece</h1>
+            <button class="shop-now-btn">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Slider Section -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="dummy_150x100_ffffff_cccccc.png" alt="Glide">
+                <p>GLIDE</p>
+            </div>
+            <div class="slide">
+                <img src="dummy_150x100_ffffff_cccccc.png" alt="Magnetic Core Bobbin">
+                <p>MAGNETIC CORE BOBBIN</p>
+            </div>
+            <div class="slide">
+                <img src="dummy_150x100_ffffff_cccccc.png" alt="Premium Stabilizer">
+                <p>PREMIUM STABILIZER</p>
+            </div>
+        </div>
+        <div class="slider-icons">
+            <button class="nav left">&lt;</button>
+            <button class="nav right">&gt;</button>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const leftButton = document.querySelector('.left');
+        const rightButton = document.querySelector('.right');
+
+        // Variables to track the current position
+        let currentSlide = 0;
+
+        // Function to scroll left
+        leftButton.addEventListener('click', () => {
+            const slideWidth = slider.firstElementChild.offsetWidth + 20; // Include gap
+            currentSlide = Math.max(currentSlide - 1, 0); // Prevent scrolling before first slide
+            slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        });
+
+        // Function to scroll right
+        rightButton.addEventListener('click', () => {
+            const slideWidth = slider.firstElementChild.offsetWidth + 20; // Include gap
+            const maxSlide = slider.children.length - 1;
+            currentSlide = Math.min(currentSlide + 1, maxSlide); // Prevent scrolling after last slide
+            slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        });
+    </script>
+
+<section class="featured-products">
+    <h2>FEATURED PRODUCTS</h2>
+    <div class="products-container">
+      <div class="product">
+        <img src="dummy_150x100_ffffff_cccccc.png"Embroidery Stabilizer">
+        <p>EMBROIDERY STABILIZER</p>
+      </div>
+      <div class="product">
+        <img src="dummy_150x100_ffffff_cccccc.png" alt="Cubbie Grey Elephant">
+        <p>CUBBIE GREY ELEPHANT</p>
+      </div>
+      <div class="product">
+        <img src="dummy_150x100_ffffff_cccccc.png" alt="Kimberbell Cup of Cheer">
+        <p>KIMBERBELL CUP OF CHEER</p>
+      </div>
+      <div class="product">
+        <img src="dummy_150x100_ffffff_cccccc.png" alt="Kimberbell Two Scoops">
+        <p>KIMBERBELL TWO SCOOPS</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
